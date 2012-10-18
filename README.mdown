@@ -8,10 +8,20 @@ _Sample input:_
     .element {
       @include rem('padding',10px 0 2px 5px);
     }
+    .element2 {
+      @include rem('border', 1px solid red);
+      @include rem('padding', 10px !important);
+    }
 
 _Sample output:_
 
     .element {
       padding: 10px 0 2px 5px;
       padding: 1rem 0 0.2rem 0.5rem;
+    }
+    .element2 {
+      border: 1px solid red;
+      border: 0.1rem solid red;
+      padding: 10px !important;
+      padding: 1rem !important;
     }

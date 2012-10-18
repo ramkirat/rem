@@ -21,8 +21,8 @@ $baseline-px: 10px
 
     @each $value in $px-values
       
-      // If the value is zero, return 0
-      @if $value == 0
+      // If the value is zero or a string or a color, return unchanged input
+      @if $value == 0 or type-of($value) == "string" or type-of($value) == "color"
         $rem-values: append($rem-values, $value)
 
       @else
